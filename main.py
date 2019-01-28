@@ -100,8 +100,8 @@ def exec_get_html():
     #print(df)
     #pd = pd.to_datetime(df[col_headers[1]])
 
-    df_print = filter_dataframe(df)
-    #df_print = df
+    #df_print = filter_dataframe(df)
+    df_print = df
 
     #df_print["会場"] = df_print["会場"].map(lambda s: "<a href='https://www.google.com/maps/place/{0}/'>{0}</a>".format(s))
     #df_print["在庫"] = df_print["在庫"].map(lambda s: "<img src='{}'/>".format(s))
