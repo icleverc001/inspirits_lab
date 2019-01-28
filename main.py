@@ -13,6 +13,10 @@ import template
 col_headers = ["会場", "日時", "購入", "タイトル", "在庫", "申込開始"]
 pd.set_option("display.max_colwidth", 80)
 weekdaylst = ["月", "火", "水", "木", "金", "土", "日"]
+def test(idx):
+    urlstr = "http://inspirits-tennis-club.com/entry/index.html" if idx == 0 else "http://inspirits-tennis-club.com/entry/index_{}.html".format(idx + 1)
+    html = urlopen(urlstr)
+    return html
 
 def get_table_data(idx):
     urlstr = "http://inspirits-tennis-club.com/entry/index.html" if idx == 0 else "http://inspirits-tennis-club.com/entry/index_{}.html".format(idx + 1)
