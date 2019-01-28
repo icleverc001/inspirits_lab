@@ -11,11 +11,7 @@ print("start")
 
 @route("/")
 def hallo():
-    print("exec")
-    #return main.exec_get_html()
-    tt = main.test(0)
-    print(tt)
-    return tt
+    return main.exec_get_html()
 
 run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 #run(host='localhost', port=8080, debug=True)
