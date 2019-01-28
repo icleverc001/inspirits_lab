@@ -1,1 +1,1 @@
-web: py exec_bottle.py
+web: python exec_bottle.py 
