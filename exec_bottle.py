@@ -7,8 +7,11 @@ import os
 from bottle import route, run
 import main
 
+print("start")
+
 @route("/")
 def exec():
+    print("exec")
     return main.exec_get_html()
 
 run(host="0.0.0.0", port=int(os.environ.get("PORT", 80)))
