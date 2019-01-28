@@ -10,7 +10,7 @@ import main
 print("start")
 
 @route("/")
-def exec():
+def hallo():
     print("exec")
     return main.exec_get_html()
 
