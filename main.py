@@ -74,10 +74,10 @@ def filter_dataframe(df_ori):
         jsondata = json.load(f)
     df_result = df_ori
 
-    for place in jsondata["会場NG"]:
-        df_result = df_result[df_result.apply(lambda x: place not in x[col_headers[0]], axis=1)]
-    for ngtitle in jsondata["タイトルNG"]:
-        df_result = df_result[df_result.apply(lambda x: ngtitle not in x[col_headers[3]], axis=1)]
+#    for place in jsondata["会場NG"]:
+#        df_result = df_result[df_result.apply(lambda x: place not in x[col_headers[0]], axis=1)]
+#    for ngtitle in jsondata["タイトルNG"]:
+#        df_result = df_result[df_result.apply(lambda x: ngtitle not in x[col_headers[3]], axis=1)]
     df_result = df_result[df_result.apply(lambda x: check_date_weekday(x[col_headers[1]], jsondata["日時"]), axis=1)]
     df_result = df_result[df_result.apply(lambda x: check_status(x[col_headers[4]]), axis=1)]
 
@@ -104,9 +104,7 @@ def exec_get_html():
     #print(df)
     #pd = pd.to_datetime(df[col_headers[1]])
 
-    ####df_print = filter_dataframe(df)
-    df_print = df
-
+    df_print = filter_dataframe(df)
     #df_print["会場"] = df_print["会場"].map(lambda s: "<a href='https://www.google.com/maps/place/{0}/'>{0}</a>".format(s))
     df_print["在庫"] = df_print["在庫"].map(lambda s: "<img src='{}'/>".format(s))
     df_print["購入"] = df_print["購入"].map(lambda s: "<a href='{}'>購入画面</a>".format(s))
